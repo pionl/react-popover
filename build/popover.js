@@ -36,7 +36,7 @@ var cssvalue = function cssvalue(prop, value) {
 };
 
 var coreStyle = {
-  position: "fixed",
+  position: "absolute",
   top: 0,
   left: 0,
   display: cssvalue("display", "flex")
