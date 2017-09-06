@@ -96,6 +96,11 @@ var on = function on(el, fn) {
 };
 
 var off = function off(el, fn) {
+  // If off method is called on component unmount and element is already
+  // null
+  if (el === null) {
+    return;
+  }
   if (el === _platform.window) {
     _platform.window.removeEventListener("resize", fn);
     return;
