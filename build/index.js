@@ -154,7 +154,7 @@ var Popover = (0, _createReactClass2.default)({
   },
   componentWillUnmount: function componentWillUnmount() {
     // Un-render the dom
-    DOM.unmountComponentAtNode(this.layerContainerNode);
+    _reactDom2.default.unmountComponentAtNode(this.layerContainerNode);
     // Remove it popover
     removeElement(this.layerContainerNode, this.getPopoverContainer());
     /* If the Popover was never opened then then tracking
