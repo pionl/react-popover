@@ -153,6 +153,9 @@ var Popover = (0, _createReactClass2.default)({
     if (didOpen) this.enter();else if (didClose) this.exit();
   },
   componentWillUnmount: function componentWillUnmount() {
+    // Un-render the dom
+    DOM.unmountComponentAtNode(this.layerContainerNode);
+    // Remove it popover
     removeElement(this.layerContainerNode, this.getPopoverContainer());
     /* If the Popover was never opened then then tracking
     initialization never took place and so calling untrack
