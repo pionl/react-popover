@@ -7,6 +7,12 @@ exports.cssprefix = exports.jsprefix = exports.clientOnly = exports.noop = expor
 
 var _platform = require("./platform");
 
+var _cssVendor = require("css-vendor");
+
+var cssVendor = _interopRequireWildcard(_cssVendor);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
 var arrayify = function arrayify(x) {
   return Array.isArray(x) ? x : [x];
 };
