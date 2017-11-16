@@ -32,7 +32,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 var supportedCSSValue = (0, _utils.clientOnly)(cssVendor.supportedValue);
 
 var cssvalue = function cssvalue(prop, value) {
-  return supportedCSSValue(prop, value) || cssprefix(value);
+  return supportedCSSValue(prop, value) || (0, _utils.cssprefix)(value);
 };
 
 var coreStyle = {

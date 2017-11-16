@@ -58,14 +58,6 @@ var removeElement = function removeElement(x, target) {
 
 var log = (0, _debug2.default)("react-popover");
 
-var jsprefix = function jsprefix(x) {
-  return "" + cssVendor.prefix.js + x;
-};
-
-var cssprefix = function cssprefix(x) {
-  return "" + cssVendor.prefix.css + x;
-};
-
 /* Flow mappings. Each map maps the flow domain to another domain. */
 
 var flowToTipTranslations = {
@@ -270,9 +262,9 @@ var Popover = (0, _createReactClass2.default)({
     recalculate layout. */
 
     this.containerEl.style.flexFlow = zone.flow;
-    this.containerEl.style[jsprefix("FlexFlow")] = this.containerEl.style.flexFlow;
+    this.containerEl.style[(0, _utils.jsprefix)("FlexFlow")] = this.containerEl.style.flexFlow;
     this.bodyEl.style.order = zone.order;
-    this.bodyEl.style[jsprefix("Order")] = this.bodyEl.style.order;
+    this.bodyEl.style[(0, _utils.jsprefix)("Order")] = this.bodyEl.style.order;
 
     /* Apply Absolute Positioning. */
 
@@ -301,7 +293,7 @@ var Popover = (0, _createReactClass2.default)({
     }
 
     this.tipEl.style.transform = flowToTipTranslations[zone.flow] + "(" + tipCrossPos + "px)";
-    this.tipEl.style[jsprefix("Transform")] = this.tipEl.style.transform;
+    this.tipEl.style[(0, _utils.jsprefix)("Transform")] = this.tipEl.style.transform;
   },
   checkTargetReposition: function checkTargetReposition() {
     if (this.measureTargetBounds()) this.resolvePopoverLayout();
@@ -371,7 +363,7 @@ var Popover = (0, _createReactClass2.default)({
     /* Prepare `entering` style so that we can then animate it toward `entered`. */
 
     this.containerEl.style.transform = flowToPopoverTranslations[this.zone.flow] + "(" + this.zone.order * 50 + "px)";
-    this.containerEl.style[jsprefix("Transform")] = this.containerEl.style.transform;
+    this.containerEl.style[(0, _utils.jsprefix)("Transform")] = this.containerEl.style.transform;
     this.containerEl.style.opacity = "0";
 
     /* After initial layout apply transition animations. */
@@ -381,14 +373,14 @@ var Popover = (0, _createReactClass2.default)({
     /* If enterExitTransitionDurationMs is falsy, tip animation should be also disabled */
     if (this.props.enterExitTransitionDurationMs) {
       this.tipEl.style.transition = "transform 150ms ease-in";
-      this.tipEl.style[jsprefix("Transition")] = cssprefix("transform") + " 150ms ease-in";
+      this.tipEl.style[(0, _utils.jsprefix)("Transition")] = (0, _utils.cssprefix)("transform") + " 150ms ease-in";
     }
     this.containerEl.style.transitionProperty = "top, left, opacity, transform";
     this.containerEl.style.transitionDuration = this.props.enterExitTransitionDurationMs + "ms";
     this.containerEl.style.transitionTimingFunction = "cubic-bezier(0.230, 1.000, 0.320, 1.000)";
     this.containerEl.style.opacity = "1";
     this.containerEl.style.transform = "translateY(0)";
-    this.containerEl.style[jsprefix("Transform")] = this.containerEl.style.transform;
+    this.containerEl.style[(0, _utils.jsprefix)("Transform")] = this.containerEl.style.transform;
   },
   trackPopover: function trackPopover() {
     var minScrollRefreshIntervalMs = 200;
